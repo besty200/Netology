@@ -1,11 +1,19 @@
+import random
+
 HELP = '''
 help - напечатать справку о программе
 add - добавить задачу в список (имя задачи будет запрашиваться)
-show - напечатать все добавленные задачи'''
-tasks = []
+show - напечатать все добавленные задачи
+random - добавляет произвольную задачу на дату Сегодня'''
 today=[]
 tomorrow = []
 other =[]
+
+RANDOM_TASKS = ["Записаться на курс в Нетологию", "Написать Гвидо письмо", "Покормить кошку", "Помыть машину"]
+
+tasks = {
+
+}
 
 while True:
     commandos = input('Введите команду: ')
@@ -30,6 +38,9 @@ while True:
         print(tomorrow)
         print('Другие')
         print(other)
+    elif commandos=='random':
+        task = random.choice(RANDOM_TASKS)
+        today.append(task)
     elif commandos=='exit':
         print('Спасибо за использование! До свидания!')
         break
